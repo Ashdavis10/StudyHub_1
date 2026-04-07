@@ -1,0 +1,162 @@
+.loading {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 50vh;
+}
+
+.page { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.greeting {
+  font-size: 1.75rem;
+  margin-bottom: 0.3rem;
+}
+.greetingSub { color: var(--text-secondary); font-size: 0.9rem; }
+
+.xpBadge {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-strong);
+  color: var(--accent-primary);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.statCard:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+
+.statIcon {
+  width: 42px; height: 42px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.stat_primary .statIcon { background: var(--accent-glow); color: var(--accent-primary); }
+.stat_teal    .statIcon { background: rgba(77,217,172,0.12); color: var(--accent-teal); }
+.stat_warm    .statIcon { background: rgba(247,162,106,0.12); color: var(--accent-warm); }
+.stat_rose    .statIcon { background: rgba(247,106,138,0.12); color: var(--accent-rose); }
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.statLabel { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+.statSub   { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.cardHeader h3 {
+  font-size: 1rem;
+  font-family: var(--font-display);
+}
+.cardSub { font-size: 0.78rem; color: var(--text-muted); }
+
+.chartCard { min-height: 260px; }
+.pomodoroCard {}
+
+.viewAll { font-size: 0.82rem; font-weight: 500; }
+
+.roomsList { display: flex; flex-direction: column; gap: 8px; }
+
+.roomRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color var(--transition), background var(--transition);
+}
+.roomRow:hover { border-color: var(--border); background: var(--bg-card); }
+
+.roomDot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.roomInfo { flex: 1; min-width: 0; }
+.roomName { display: block; font-size: 0.875rem; font-weight: 500; }
+.roomSub  { display: block; font-size: 0.75rem; color: var(--text-muted); }
+
+.roomMembers {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.78rem; color: var(--text-muted);
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.badgesCard {}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  min-width: 80px;
+  text-align: center;
+  transition: border-color var(--transition);
+  cursor: default;
+}
+.badge:hover { border-color: var(--border-strong); }
+.badgeIcon { font-size: 1.5rem; }
+.badgeLabel { font-size: 0.7rem; color: var(--text-secondary); }
+
+@media (max-width: 768px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .header { flex-direction: column; }
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+}
